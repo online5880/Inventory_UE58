@@ -73,3 +73,11 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+.idea/
+Content/__ExternalActors__
+Content/__ExternalObjects__
+Content/Variant_Combat
+Content/Variant_SideScrolling
+Content/Variant_Platforming
+Source/InventoryProject/Variant_*/
