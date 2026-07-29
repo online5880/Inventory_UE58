@@ -30,9 +30,9 @@ void UInv_InventoryComponent::BeginPlay()
 void UInv_InventoryComponent::ConstructInventory()
 {
 	OwningController = Cast<APlayerController>(GetOwner());
-	checkf(OwningController.IsValid(), TEXT("Inventory Component should have a Player Controller as Owner"));
+	checkf(OwningController.IsValid(), TEXT("Inventory Component should have a Player Controller as Owner."))
 	if (!OwningController->IsLocalController()) return;
-	
+
 	InventoryMenu = CreateWidget<UInv_InventoryBase>(OwningController.Get(), InventoryMenuClass);
 	InventoryMenu->AddToViewport();
 	CloseInventoryMenu();
