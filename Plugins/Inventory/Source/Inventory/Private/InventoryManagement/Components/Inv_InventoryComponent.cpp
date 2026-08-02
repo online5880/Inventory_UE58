@@ -1,5 +1,6 @@
 ﻿#include "InventoryManagement/Components/Inv_InventoryComponent.h"
 #include "GameFramework/PlayerController.h"
+#include "Items/Components/Inv_ItemComponent.h"
 #include "Widgets/Inventory/InventoryBase/Inv_InventoryBase.h"
 
 UInv_InventoryComponent::UInv_InventoryComponent()
@@ -18,7 +19,25 @@ void UInv_InventoryComponent::TryAddItem(UInv_ItemComponent* ItemComponent)
 		return;
 	}
 	
-	// TODO : Actually add the item to the inventory
+	if (Result.Item.IsValid() && Result.bStackable)
+	{
+		// 이미 있을떄(스택)
+		Server_AddStacksToItem(ItemComponent,Result.TotalRoomToFill, Result.Remainder);
+	}
+	else if (Result.TotalRoomToFill > 0 )
+	{
+		// 처음 추가할때
+		Server_AddNewItem(ItemComponent, Result.bStackable ? Result.TotalRoomToFill : 0);
+	}
+}
+
+void UInv_InventoryComponent::Server_AddNewItem_Implementation(UInv_ItemComponent* ItemComponent, int32 StackCount)
+{
+	
+}
+
+void UInv_InventoryComponent::Server_AddStacksToItem_Implementation(UInv_ItemComponent* ItemComponent, int32 StackCount, int32 Remainder)
+{
 	
 }
 
