@@ -1,4 +1,4 @@
-﻿#include "InventoryManagement/Inv_InventoryComponent.h"
+﻿#include "InventoryManagement/Components/Inv_InventoryComponent.h"
 #include "GameFramework/PlayerController.h"
 #include "Widgets/Inventory/InventoryBase/Inv_InventoryBase.h"
 
