@@ -3,6 +3,8 @@
 
 #include "Inv_ItemFragment.generated.h"
 
+class UTexture2D;
+
 USTRUCT(BlueprintType)
 struct FInv_ItemFragment
 {
@@ -41,4 +43,18 @@ private:
 	
 	UPROPERTY(EditAnywhere, Category = "Inventory")
 	float GridPadding{0.1f};
+};
+
+USTRUCT(BlueprintType)
+struct FInv_ImageFragment : public FInv_ItemFragment
+{
+	GENERATED_BODY()
+	
+private:
+	
+	UPROPERTY(EditAnywhere, Category = "Inventory")
+	TObjectPtr<UTexture2D> Icon{nullptr};
+	
+	UPROPERTY(EditAnywhere, Category = "Inventory")
+	FVector2D IconDimensions{44.f, 44.f};
 };
