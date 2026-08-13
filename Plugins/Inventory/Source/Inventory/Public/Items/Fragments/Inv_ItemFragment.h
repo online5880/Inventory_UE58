@@ -50,6 +50,8 @@ struct FInv_ImageFragment : public FInv_ItemFragment
 {
 	GENERATED_BODY()
 	
+	UTexture2D* GetIcon() const {return Icon;}
+	
 private:
 	
 	UPROPERTY(EditAnywhere, Category = "Inventory")
